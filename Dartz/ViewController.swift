@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func hitTapped(sender: HitButton) {
+       
        sender.currentState = sender.currentState.successor()
        print("Hit value \(sender.hitValue)")
         

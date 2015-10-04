@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -20,6 +22,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func hitTapped(sender: HitButton) {
+       sender.currentState = sender.currentState.successor()
+       print("Hit value \(sender.hitValue)")
+        
+    }
 
 }
 

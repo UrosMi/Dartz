@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495E45B51BC1656600242B27 /* HitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B41BC1656600242B27 /* HitButton.swift */; settings = {ASSET_TAGS = (); }; };
+		495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */; settings = {ASSET_TAGS = (); }; };
 		49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5261BBAC71000C06AFF /* AppDelegate.swift */; };
 		49E4B5291BBAC71000C06AFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5281BBAC71000C06AFF /* ViewController.swift */; };
 		49E4B52C1BBAC71000C06AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E4B52A1BBAC71000C06AFF /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		495E45B41BC1656600242B27 /* HitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitButton.swift; sourceTree = "<group>"; };
+		495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateEnum.swift; sourceTree = "<group>"; };
 		49E4B5231BBAC71000C06AFF /* Dartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E4B5261BBAC71000C06AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E4B5281BBAC71000C06AFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				49E4B52D1BBAC71000C06AFF /* Assets.xcassets */,
 				49E4B52F1BBAC71000C06AFF /* LaunchScreen.storyboard */,
 				49E4B5321BBAC71000C06AFF /* Info.plist */,
+				495E45B41BC1656600242B27 /* HitButton.swift */,
+				495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */,
 			);
 			path = Dartz;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			files = (
 				49E4B5291BBAC71000C06AFF /* ViewController.swift in Sources */,
 				49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */,
+				495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */,
+				495E45B51BC1656600242B27 /* HitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +489,7 @@
 				49E4B54D1BBAC71000C06AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49E4B54E1BBAC71000C06AFF /* Build configuration list for PBXNativeTarget "DartzTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +498,7 @@
 				49E4B5501BBAC71000C06AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49E4B5511BBAC71000C06AFF /* Build configuration list for PBXNativeTarget "DartzUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +507,7 @@
 				49E4B5531BBAC71000C06AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

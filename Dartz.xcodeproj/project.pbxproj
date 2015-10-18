@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49435D7F1BD3B0A400AB0CC0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49435D7D1BD3B0A400AB0CC0 /* Interface.storyboard */; };
+		49435D811BD3B0A400AB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49435D801BD3B0A400AB0CC0 /* Assets.xcassets */; };
+		49435D881BD3B0A400AB0CC0 /* DartzWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49435D8D1BD3B0A400AB0CC0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D8C1BD3B0A400AB0CC0 /* InterfaceController.swift */; };
+		49435D8F1BD3B0A400AB0CC0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D8E1BD3B0A400AB0CC0 /* ExtensionDelegate.swift */; };
+		49435D911BD3B0A400AB0CC0 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D901BD3B0A400AB0CC0 /* GlanceController.swift */; };
+		49435D931BD3B0A400AB0CC0 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D921BD3B0A400AB0CC0 /* ComplicationController.swift */; };
+		49435D951BD3B0A400AB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49435D941BD3B0A400AB0CC0 /* Assets.xcassets */; };
+		49435D991BD3B0A400AB0CC0 /* DartzWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 49435D7B1BD3B0A400AB0CC0 /* DartzWatch.app */; };
 		495E45B51BC1656600242B27 /* HitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B41BC1656600242B27 /* HitButton.swift */; settings = {ASSET_TAGS = (); }; };
 		495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */; settings = {ASSET_TAGS = (); }; };
 		49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5261BBAC71000C06AFF /* AppDelegate.swift */; };
@@ -16,9 +25,25 @@
 		49E4B5311BBAC71000C06AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E4B52F1BBAC71000C06AFF /* LaunchScreen.storyboard */; };
 		49E4B53C1BBAC71000C06AFF /* DartzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B53B1BBAC71000C06AFF /* DartzTests.swift */; };
 		49E4B5471BBAC71000C06AFF /* DartzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5461BBAC71000C06AFF /* DartzUITests.swift */; };
+		49FDFF041BD116A2003821B4 /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF031BD116A2003821B4 /* GameMaster.swift */; settings = {ASSET_TAGS = (); }; };
+		49FDFF061BD2EB5A003821B4 /* TurnTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		49435D891BD3B0A400AB0CC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49E4B51B1BBAC71000C06AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49435D861BD3B0A400AB0CC0;
+			remoteInfo = "DartzWatch Extension";
+		};
+		49435D971BD3B0A400AB0CC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49E4B51B1BBAC71000C06AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49435D7A1BD3B0A400AB0CC0;
+			remoteInfo = DartzWatch;
+		};
 		49E4B5381BBAC71000C06AFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49E4B51B1BBAC71000C06AFF /* Project object */;
@@ -35,14 +60,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49435D9F1BD3B0A400AB0CC0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49435D881BD3B0A400AB0CC0 /* DartzWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49435DA11BD3B0A400AB0CC0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				49435D991BD3B0A400AB0CC0 /* DartzWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		49435D7B1BD3B0A400AB0CC0 /* DartzWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DartzWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49435D7E1BD3B0A400AB0CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		49435D801BD3B0A400AB0CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49435D821BD3B0A400AB0CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DartzWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49435D8C1BD3B0A400AB0CC0 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		49435D8E1BD3B0A400AB0CC0 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		49435D901BD3B0A400AB0CC0 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		49435D921BD3B0A400AB0CC0 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		49435D941BD3B0A400AB0CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49435D961BD3B0A400AB0CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495E45B41BC1656600242B27 /* HitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitButton.swift; sourceTree = "<group>"; };
 		495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateEnum.swift; sourceTree = "<group>"; };
 		49E4B5231BBAC71000C06AFF /* Dartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E4B5261BBAC71000C06AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E4B5281BBAC71000C06AFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49E4B52B1BBAC71000C06AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		49E4B52D1BBAC71000C06AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49E4B52D1BBAC71000C06AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Dartz/Assets.xcassets; sourceTree = "<group>"; };
 		49E4B5301BBAC71000C06AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49E4B5321BBAC71000C06AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E4B5371BBAC71000C06AFF /* DartzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DartzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,9 +112,18 @@
 		49E4B5421BBAC71000C06AFF /* DartzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DartzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E4B5461BBAC71000C06AFF /* DartzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartzUITests.swift; sourceTree = "<group>"; };
 		49E4B5481BBAC71000C06AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FDFF031BD116A2003821B4 /* GameMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
+		49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnTypeEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		49435D841BD3B0A400AB0CC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49E4B5201BBAC71000C06AFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,12 +148,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49435D7C1BD3B0A400AB0CC0 /* DartzWatch */ = {
+			isa = PBXGroup;
+			children = (
+				49435D7D1BD3B0A400AB0CC0 /* Interface.storyboard */,
+				49435D801BD3B0A400AB0CC0 /* Assets.xcassets */,
+				49435D821BD3B0A400AB0CC0 /* Info.plist */,
+			);
+			path = DartzWatch;
+			sourceTree = "<group>";
+		};
+		49435D8B1BD3B0A400AB0CC0 /* DartzWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				49435D8C1BD3B0A400AB0CC0 /* InterfaceController.swift */,
+				49435D8E1BD3B0A400AB0CC0 /* ExtensionDelegate.swift */,
+				49435D901BD3B0A400AB0CC0 /* GlanceController.swift */,
+				49435D921BD3B0A400AB0CC0 /* ComplicationController.swift */,
+				49435D941BD3B0A400AB0CC0 /* Assets.xcassets */,
+				49435D961BD3B0A400AB0CC0 /* Info.plist */,
+			);
+			path = "DartzWatch Extension";
+			sourceTree = "<group>";
+		};
 		49E4B51A1BBAC71000C06AFF = {
 			isa = PBXGroup;
 			children = (
 				49E4B5251BBAC71000C06AFF /* Dartz */,
 				49E4B53A1BBAC71000C06AFF /* DartzTests */,
 				49E4B5451BBAC71000C06AFF /* DartzUITests */,
+				49435D7C1BD3B0A400AB0CC0 /* DartzWatch */,
+				49435D8B1BD3B0A400AB0CC0 /* DartzWatch Extension */,
 				49E4B5241BBAC71000C06AFF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +189,8 @@
 				49E4B5231BBAC71000C06AFF /* Dartz.app */,
 				49E4B5371BBAC71000C06AFF /* DartzTests.xctest */,
 				49E4B5421BBAC71000C06AFF /* DartzUITests.xctest */,
+				49435D7B1BD3B0A400AB0CC0 /* DartzWatch.app */,
+				49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,13 +199,12 @@
 			isa = PBXGroup;
 			children = (
 				49E4B5261BBAC71000C06AFF /* AppDelegate.swift */,
+				49FDFF081BD397B0003821B4 /* Storyboard */,
+				49FDFF071BD3978A003821B4 /* Enums */,
 				49E4B5281BBAC71000C06AFF /* ViewController.swift */,
-				49E4B52A1BBAC71000C06AFF /* Main.storyboard */,
-				49E4B52D1BBAC71000C06AFF /* Assets.xcassets */,
-				49E4B52F1BBAC71000C06AFF /* LaunchScreen.storyboard */,
-				49E4B5321BBAC71000C06AFF /* Info.plist */,
 				495E45B41BC1656600242B27 /* HitButton.swift */,
-				495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */,
+				49FDFF031BD116A2003821B4 /* GameMaster.swift */,
+				49E4B5321BBAC71000C06AFF /* Info.plist */,
 			);
 			path = Dartz;
 			sourceTree = "<group>";
@@ -131,9 +227,63 @@
 			path = DartzUITests;
 			sourceTree = "<group>";
 		};
+		49FDFF071BD3978A003821B4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */,
+				495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		49FDFF081BD397B0003821B4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				49E4B52A1BBAC71000C06AFF /* Main.storyboard */,
+				49E4B52F1BBAC71000C06AFF /* LaunchScreen.storyboard */,
+				49E4B52D1BBAC71000C06AFF /* Assets.xcassets */,
+			);
+			name = Storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		49435D7A1BD3B0A400AB0CC0 /* DartzWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49435DA01BD3B0A400AB0CC0 /* Build configuration list for PBXNativeTarget "DartzWatch" */;
+			buildPhases = (
+				49435D791BD3B0A400AB0CC0 /* Resources */,
+				49435D9F1BD3B0A400AB0CC0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49435D8A1BD3B0A400AB0CC0 /* PBXTargetDependency */,
+			);
+			name = DartzWatch;
+			productName = DartzWatch;
+			productReference = 49435D7B1BD3B0A400AB0CC0 /* DartzWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		49435D861BD3B0A400AB0CC0 /* DartzWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49435D9E1BD3B0A400AB0CC0 /* Build configuration list for PBXNativeTarget "DartzWatch Extension" */;
+			buildPhases = (
+				49435D831BD3B0A400AB0CC0 /* Sources */,
+				49435D841BD3B0A400AB0CC0 /* Frameworks */,
+				49435D851BD3B0A400AB0CC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DartzWatch Extension";
+			productName = "DartzWatch Extension";
+			productReference = 49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		49E4B5221BBAC71000C06AFF /* Dartz */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49E4B54B1BBAC71000C06AFF /* Build configuration list for PBXNativeTarget "Dartz" */;
@@ -141,10 +291,12 @@
 				49E4B51F1BBAC71000C06AFF /* Sources */,
 				49E4B5201BBAC71000C06AFF /* Frameworks */,
 				49E4B5211BBAC71000C06AFF /* Resources */,
+				49435DA11BD3B0A400AB0CC0 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49435D981BD3B0A400AB0CC0 /* PBXTargetDependency */,
 			);
 			name = Dartz;
 			productName = Dartz;
@@ -196,6 +348,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = me;
 				TargetAttributes = {
+					49435D7A1BD3B0A400AB0CC0 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					49435D861BD3B0A400AB0CC0 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 					49E4B5221BBAC71000C06AFF = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -225,11 +383,30 @@
 				49E4B5221BBAC71000C06AFF /* Dartz */,
 				49E4B5361BBAC71000C06AFF /* DartzTests */,
 				49E4B5411BBAC71000C06AFF /* DartzUITests */,
+				49435D7A1BD3B0A400AB0CC0 /* DartzWatch */,
+				49435D861BD3B0A400AB0CC0 /* DartzWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		49435D791BD3B0A400AB0CC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49435D811BD3B0A400AB0CC0 /* Assets.xcassets in Resources */,
+				49435D7F1BD3B0A400AB0CC0 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49435D851BD3B0A400AB0CC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49435D951BD3B0A400AB0CC0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49E4B5211BBAC71000C06AFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,14 +434,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		49435D831BD3B0A400AB0CC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49435D8F1BD3B0A400AB0CC0 /* ExtensionDelegate.swift in Sources */,
+				49435D931BD3B0A400AB0CC0 /* ComplicationController.swift in Sources */,
+				49435D8D1BD3B0A400AB0CC0 /* InterfaceController.swift in Sources */,
+				49435D911BD3B0A400AB0CC0 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49E4B51F1BBAC71000C06AFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FDFF041BD116A2003821B4 /* GameMaster.swift in Sources */,
 				49E4B5291BBAC71000C06AFF /* ViewController.swift in Sources */,
 				49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */,
 				495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */,
 				495E45B51BC1656600242B27 /* HitButton.swift in Sources */,
+				49FDFF061BD2EB5A003821B4 /* TurnTypeEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +477,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		49435D8A1BD3B0A400AB0CC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49435D861BD3B0A400AB0CC0 /* DartzWatch Extension */;
+			targetProxy = 49435D891BD3B0A400AB0CC0 /* PBXContainerItemProxy */;
+		};
+		49435D981BD3B0A400AB0CC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49435D7A1BD3B0A400AB0CC0 /* DartzWatch */;
+			targetProxy = 49435D971BD3B0A400AB0CC0 /* PBXContainerItemProxy */;
+		};
 		49E4B5391BBAC71000C06AFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 49E4B5221BBAC71000C06AFF /* Dartz */;
@@ -300,12 +500,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		49435D7D1BD3B0A400AB0CC0 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49435D7E1BD3B0A400AB0CC0 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		49E4B52A1BBAC71000C06AFF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				49E4B52B1BBAC71000C06AFF /* Base */,
 			);
 			name = Main.storyboard;
+			path = Dartz;
 			sourceTree = "<group>";
 		};
 		49E4B52F1BBAC71000C06AFF /* LaunchScreen.storyboard */ = {
@@ -314,11 +523,74 @@
 				49E4B5301BBAC71000C06AFF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = Dartz;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		49435D9A1BD3B0A400AB0CC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DartzWatch_Extension;
+				INFOPLIST_FILE = DartzWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = urosGames.Dartz.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		49435D9B1BD3B0A400AB0CC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DartzWatch_Extension;
+				INFOPLIST_FILE = DartzWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = urosGames.Dartz.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		49435D9C1BD3B0A400AB0CC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "DartzWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = urosGames.Dartz.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		49435D9D1BD3B0A400AB0CC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "DartzWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = urosGames.Dartz.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		49E4B5491BBAC71000C06AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -473,6 +745,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		49435D9E1BD3B0A400AB0CC0 /* Build configuration list for PBXNativeTarget "DartzWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49435D9C1BD3B0A400AB0CC0 /* Debug */,
+				49435D9D1BD3B0A400AB0CC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49435DA01BD3B0A400AB0CC0 /* Build configuration list for PBXNativeTarget "DartzWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49435D9A1BD3B0A400AB0CC0 /* Debug */,
+				49435D9B1BD3B0A400AB0CC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		49E4B51E1BBAC71000C06AFF /* Build configuration list for PBXProject "Dartz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

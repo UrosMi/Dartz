@@ -20,19 +20,27 @@ class HitButton: UIButton {
     private var thirdCircleLayer = CAShapeLayer()
     
     
-    internal var currentState = ButtonState.NoHits {
+    var currentState = ButtonState.NoHits {
         didSet{
             switch currentState {
+            case .NoHits:
+                firstCircleLayer.opacity = 0.1
+                secondCircleLayer.opacity = 0.1
+                thirdCircleLayer.opacity = 0.1
             case .OneHit:
                 firstCircleLayer.opacity = 1.0
+                secondCircleLayer.opacity = 0.1
+                thirdCircleLayer.opacity = 0.1
                 break
             case .TwoHits:
                 secondCircleLayer.opacity = 1.0
+                secondCircleLayer.opacity = 1.0
+                thirdCircleLayer.opacity = 0.1
                 break
-            case .ThreeHits:
+            case .ThreeHits,.Closed:
                 thirdCircleLayer.opacity = 1.0
-                break
-            default:
+                secondCircleLayer.opacity = 1.0
+                thirdCircleLayer.opacity = 1.0
                 break
             }
         }

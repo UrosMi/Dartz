@@ -29,7 +29,7 @@ class GameMaster: NSObject, WCSessionDelegate {
     var turnStack = Array<GameTurn>()
     var teamOneScore = 0
     var teamTwoScore = 0
-    var session: WCSession!
+    var session: WCSession?
     
     override init() {
         super.init()
@@ -63,8 +63,8 @@ class GameMaster: NSObject, WCSessionDelegate {
     func setupWatchSession() {
         if WCSession.isSupported() {
             session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
+            session!.delegate = self
+            session!.activateSession()
         }
     }
     
@@ -90,8 +90,8 @@ class GameMaster: NSObject, WCSessionDelegate {
                     "buttonID": turnState.buttonID,
                         "flag": shouldUpdateHits]
         
-        if session.reachable {
-        session.sendMessage(["teamScore":teamOneScore], replyHandler: nil, errorHandler: nil)
+        if session != nil && session!.reachable {
+            session!.sendMessage(["teamScore":teamOneScore], replyHandler: nil, errorHandler: nil)
         }
         NSNotificationCenter.defaultCenter().postNotificationName("updateUI",
             object: self,

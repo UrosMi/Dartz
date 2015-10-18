@@ -17,11 +17,13 @@ class ViewController: UIViewController{
     let teamTwo = 8005;
     @IBOutlet weak var teamTwoLabel: UILabel!
     @IBOutlet var teamTwoHits: [HitButton]!
+    @IBOutlet weak var undoButton: UIButton!
 
     var gameMaster = GameMaster()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        undoButton.layer.cornerRadius = undoButton.bounds.size.width*0.5
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUI:", name: "updateUI", object: nil)
     }
     

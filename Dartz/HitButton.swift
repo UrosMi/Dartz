@@ -11,7 +11,9 @@ import UIKit
 class HitButton: UIButton {
 
     @IBInspectable var hitValue : Int = 0
-    @IBInspectable var fillColor : UIColor = UIColor.whiteColor() 
+    @IBInspectable var fillColor : UIColor = UIColor.whiteColor()
+    @IBInspectable var teamID : TeamID = TeamID.TeamOne
+    
     var radius : CGFloat = 20.0
     var spacing : CGFloat = 4.0
     

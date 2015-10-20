@@ -15,8 +15,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var session: WCSession!
 
+    @IBOutlet var score: WKInterfaceLabel!
+    @IBOutlet var hitsTable: WKInterfaceTable!
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        hitsTable.setNumberOfRows(7, withRowType: "hitButton")
         
         if WCSession.isSupported() {
             session = WCSession.defaultSession()
@@ -24,10 +29,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             session.activateSession()
         }
         // Configure interface objects here.
-        
     }
-
-    @IBOutlet var score: WKInterfaceLabel!
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user

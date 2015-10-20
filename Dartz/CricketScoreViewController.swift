@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class CricketScoreViewController: UIViewController{
 
-    let teamOne = 1337;
     @IBOutlet weak var teamOneLabel: UILabel!
     @IBOutlet var teamOneHits: [HitButton]!
 
-    let teamTwo = 8005;
     @IBOutlet weak var teamTwoLabel: UILabel!
     @IBOutlet var teamTwoHits: [HitButton]!
     @IBOutlet weak var undoButton: UIButton!
@@ -23,19 +21,14 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        undoButton.layer.cornerRadius = undoButton.bounds.size.width*0.5
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUI:", name: "updateUI", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUI:", name: GlobalConsts.kUpdateUINotification, object: nil)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    // MARK: - Outlet actions
     @IBAction func undoTapped(sender: UIButton) {
         gameMaster.undoTurn()
     }
@@ -49,23 +42,31 @@ class ViewController: UIViewController{
     
     @IBAction func hitTapped(sender: HitButton) {
         var scoreChange = sender.hitValue
-        if sender.currentState.successor() != ButtonState.Closed {scoreChange = 0}
-        gameMaster.makeTurn(sender.tag, scoreChange: scoreChange, hitValue: UInt(sender.hitValue), turnType: TurnType.RegularTurn)
-    }
-
-    dynamic private func updateUI(notification: NSNotification) {
-        let infoDict = notification.userInfo!
-        let id = infoDict["buttonID"] as! Int
-        let turnTypeInt = infoDict["turnType"] as! Int
-        let team = infoDict["team"] as! Int
-        let shouldUpdateHits = infoDict["flag"] as! Bool
-        
-        updateScoreLabelForTeam(team)
-        if shouldUpdateHits {updateHitButton(id, forTeam: team, turntype: TurnType.turnTypeFromInt(turnTypeInt))}
+        if let teamID = teamIDFor(sender) {
+            if sender.currentState.successor() != ButtonState.Closed {scoreChange = 0}
+            gameMaster.makeTurn(teamID, scoreChange: scoreChange, hitValue: UInt(sender.hitValue), turnType: TurnType.RegularTurn)
+        }
+        else {
+            print("ERROR: One of the buttons is not in any collection(team)")
+        }
     }
     
-    private func updateScoreLabelForTeam(teamNum: Int) {
-        if teamNum == teamOne {
+    // MARK: - UI updates
+    dynamic private func updateUI(notification: NSNotification) {
+        let infoDict = notification.userInfo!
+        let id = infoDict[GlobalConsts.kButtonIDKey] as! Int
+        let turnTypeInt = infoDict[GlobalConsts.kTurnTypeKey] as! Int
+        let team = infoDict[GlobalConsts.kTeamIDKey] as! UInt
+        let shouldUpdateHits = infoDict[GlobalConsts.kUIUpdateKey] as! Bool
+        
+        updateScoreLabelForTeam(team)
+        if shouldUpdateHits {
+            updateHitButton(id, forTeam: team, turntype: TurnType(rawValue: turnTypeInt)!)
+        }
+    }
+    
+    private func updateScoreLabelForTeam(teamNum: UInt) {
+        if TeamID(rawValue: teamNum) == TeamID.TeamOne {
             teamOneLabel.text = "\(gameMaster.teamOneScore)"
         }
         else {
@@ -74,14 +75,26 @@ class ViewController: UIViewController{
         
     }
     
-    private func updateHitButton(buttonId: Int,forTeam team: Int,turntype type: TurnType) {
-        let hitCollection = team == teamOne ? teamOneHits : teamTwoHits
+    private func updateHitButton(buttonId: Int,forTeam team: UInt,turntype type: TurnType) {
+        let hitCollection = TeamID(rawValue: team) == TeamID.TeamOne ? teamOneHits : teamTwoHits
         for hitButton in hitCollection {
             if buttonId == hitButton.hitValue  {
                 hitButton.currentState = hitButton.currentState.nextStateFor(type)
             }
         }
     
+    }
+    
+    private func teamIDFor(sender: HitButton) -> TeamID? {
+        if teamOneHits.contains(sender)  {
+            return TeamID.TeamOne
+        }
+        else if teamTwoHits.contains(sender) {
+            return TeamID.TeamTwo
+        }
+        else {
+            return nil
+        }
     }
 }
 

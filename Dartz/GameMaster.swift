@@ -9,23 +9,23 @@
 import UIKit
 import WatchConnectivity
 
-class GameMaster: NSObject, WCSessionDelegate {
-    
-    struct GameTurn {
-        var teamNum : Int
-        var scoreChange : Int
-        var buttonID : UInt
-        var turnType : TurnType
-        init(fromTeam team: Int, valueChange: Int, hitValue: UInt, andType ttype: TurnType) {
-            teamNum = team
-            scoreChange = valueChange
-            buttonID = hitValue
-            turnType = ttype
-        }
+struct GameTurn {
+    var teamNum : TeamID
+    var scoreChange : Int
+    var buttonID : UInt
+    var turnType : TurnType
+    func toDict(shouldUpdateHits: Bool) -> [String:AnyObject] {
+        let dict: [String:AnyObject] =
+            [GlobalConsts.kTeamIDKey: teamNum.rawValue,
+            GlobalConsts.kTurnTypeKey: turnType.rawValue,
+            GlobalConsts.kButtonIDKey: buttonID,
+            GlobalConsts.kUIUpdateKey: shouldUpdateHits]
+        return dict
     }
+}
 
-    let teamOne = 1337;
-    let teamTwo = 8005;
+class GameMaster: NSObject, WCSessionDelegate {
+
     var turnStack = Array<GameTurn>()
     var teamOneScore = 0
     var teamTwoScore = 0
@@ -36,22 +36,25 @@ class GameMaster: NSObject, WCSessionDelegate {
         setupWatchSession()
     }
     
-    func makeTurn(team: Int, scoreChange: Int, hitValue: UInt, turnType: TurnType) {
-        let turn = GameTurn(fromTeam: team, valueChange: scoreChange, hitValue: hitValue, andType: turnType)
+    func makeTurn(team: TeamID, scoreChange: Int, hitValue: UInt, turnType: TurnType) {
+        let turn = GameTurn(teamNum: team, scoreChange: scoreChange, buttonID: hitValue, turnType: turnType)
         updateScore(turn)
         turnStack.append(turn)
         notifyForUIUpdate(turn, shouldUpdateHits: true);
         printStack()
     }
     func undoTurn() {
-        guard let lastTurn = turnStack.popLast() else {return}
-        let undoingTurn = GameTurn(fromTeam: lastTurn.teamNum, valueChange: -lastTurn.scoreChange, hitValue: lastTurn.buttonID, andType: TurnType.UndoneTurn)
-        updateScore(undoingTurn)
+        var turnToUndo = turnStack.popLast()
+        if turnToUndo == nil {return}
+        turnToUndo?.scoreChange = -turnToUndo!.scoreChange
+        turnToUndo?.turnType = TurnType.UndoneTurn
+        
+        updateScore(turnToUndo!)
         var shouldUpateHits = false
-        if undoingTurn.turnType == TurnType.UndoneTurn && undoingTurn.scoreChange == 0 {
+        if turnToUndo!.turnType == TurnType.UndoneTurn && turnToUndo!.scoreChange == 0 {
             shouldUpateHits = true
         }
-        notifyForUIUpdate(undoingTurn, shouldUpdateHits: shouldUpateHits)
+        notifyForUIUpdate(turnToUndo!, shouldUpdateHits: shouldUpateHits)
         printStack()
     }
     func newGame() {
@@ -69,39 +72,30 @@ class GameMaster: NSObject, WCSessionDelegate {
     }
     
     func updateScore(turnChanges: GameTurn) {
-        if (turnChanges.teamNum == teamOne) {
+        if (turnChanges.teamNum == TeamID.TeamOne) {
             teamOneScore += turnChanges.scoreChange
         }
         else {
             teamTwoScore += turnChanges.scoreChange
         }
     }
-    func notifyForUIUpdate(turnState: GameTurn) {
-        NSNotificationCenter.defaultCenter().postNotificationName("updateUI",
-            object: self,
-            userInfo: ["team": turnState.teamNum,
-                   "turnType": turnState.turnType.rawValue,
-                   "buttonID": turnState.buttonID])
-    }
+
     func notifyForUIUpdate(turnState: GameTurn, shouldUpdateHits: Bool) {
         
-        let infoDict : [String:AnyObject] = ["team": turnState.teamNum,
-                    "turnType": turnState.turnType.rawValue,
-                    "buttonID": turnState.buttonID,
-                        "flag": shouldUpdateHits]
+        let infoDict = turnState.toDict(shouldUpdateHits)
         
         if session != nil && session!.reachable {
             session!.sendMessage(["teamScore":teamOneScore], replyHandler: nil, errorHandler: nil)
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("updateUI",
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConsts.kUpdateUINotification,
             object: self,
             userInfo:infoDict)
     }
     
     private func printStack() {
         for turn in turnStack {
-            print("[\(turn.scoreChange),\(turn.buttonID),\(turn.turnType)]")
+            print("[\(turn.teamNum),\(turn.scoreChange),\(turn.buttonID),\(turn.turnType)]")
         }
-        print("______________________________")
+        print("----------------------------------------")
     }
 }

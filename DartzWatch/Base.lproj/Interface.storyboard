@@ -58,15 +58,23 @@
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">
             <objects>
-                <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="DartzWatch" customModuleProvider="target">
+                <glanceController spacing="0.0" topTemplateType="body1Large" bottomTemplateType="largeGroup" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="DartzWatch" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="gv7-I2-MZq"/>
-                        <group alignment="left" id="eew-Gs-W6Y"/>
+                        <label alignment="left" text="Label" id="axf-yD-hiH"/>
+                        <label alignment="left" text="1234" id="BFd-Hg-a7R"/>
+                        <label alignment="left" text="9999" id="JzI-Rh-O1a">
+                            <color key="textColor" red="1" green="0.0" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <group alignment="left" id="1yI-WQ-Uii">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" image="dart" contentMode="top" id="BOp-HK-bUY"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="123" y="752"/>
+            <point key="canvasLocation" x="122.92307692307693" y="751.92307692307702"/>
         </scene>
     </scenes>
 </document>

@@ -43,8 +43,14 @@ class CricketScoreViewController: UIViewController{
     @IBAction func hitTapped(sender: HitButton) {
         var scoreChange = sender.hitValue
         if let teamID = teamIDFor(sender) {
+            if hitWithID(sender.hitValue, closedForTeam: teamID) && sender.currentState.successor() == ButtonState.Closed {
+                sender.currentState = ButtonState.Closed
+                return
+            }
             if sender.currentState.successor() != ButtonState.Closed {scoreChange = 0}
             gameMaster.makeTurn(teamID, scoreChange: scoreChange, hitValue: UInt(sender.hitValue), turnType: TurnType.RegularTurn)
+       
+
         }
         else {
             print("ERROR: One of the buttons is not in any collection(team)")
@@ -75,16 +81,18 @@ class CricketScoreViewController: UIViewController{
         
     }
     
-    private func updateHitButton(buttonId: Int,forTeam team: UInt,turntype type: TurnType) {
-        let hitCollection = TeamID(rawValue: team) == TeamID.TeamOne ? teamOneHits : teamTwoHits
-        for hitButton in hitCollection {
-            if buttonId == hitButton.hitValue  {
-                hitButton.currentState = hitButton.currentState.nextStateFor(type)
-            }
+    private func updateHitButton(buttonId: Int, forTeam team: UInt,turntype type: TurnType) {
+        let hitCollection = hitCollectionForTeam(TeamID(rawValue: team)!)
+        let hitButton = hitButtonWithID(buttonId, inCollection: hitCollection)
+        if let hitButton = hitButton {
+            hitButton.currentState = hitButton.currentState.nextStateFor(type)
         }
-    
+        else {
+            print("ERROR: Button \(hitButton) is not in any collection",hitButton)
+        }
     }
     
+    // MARK: - Utils
     private func teamIDFor(sender: HitButton) -> TeamID? {
         if teamOneHits.contains(sender)  {
             return TeamID.TeamOne
@@ -95,6 +103,30 @@ class CricketScoreViewController: UIViewController{
         else {
             return nil
         }
+    }
+    
+    private func hitButtonWithID(buttonID: Int, inCollection hitCollection: [HitButton]) -> HitButton? {
+        for hitButton in hitCollection {
+            if buttonID == hitButton.hitValue  {
+                return hitButton
+            }
+        }
+        return nil
+    }
+    
+    private func hitWithID(buttonID: Int, closedForTeam team: TeamID) -> Bool {
+        let opposingTeamHits = hitCollectionForTeam(team.oppositeTeam())
+        if let opposingTeamHit = hitButtonWithID(buttonID, inCollection: opposingTeamHits) {
+            return [ButtonState.ThreeHits,ButtonState.Closed].contains(opposingTeamHit.currentState) ? true : false
+        }
+        else {
+            print("ERROR: One of the buttons is not in any collection(team)")
+            return false
+        }
+    }
+    
+    private func hitCollectionForTeam(team: TeamID) -> [HitButton] {
+        return team == TeamID.TeamOne ? teamOneHits : teamTwoHits
     }
 }
 

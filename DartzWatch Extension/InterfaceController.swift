@@ -26,7 +26,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         if WCSession.isSupported() {
             session = WCSession.defaultSession()
             session.delegate = self
-            session.activateSession()
+            //session.activateSession()
         }
         // Configure interface objects here.
     }

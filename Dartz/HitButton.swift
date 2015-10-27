@@ -12,10 +12,11 @@ class HitButton: UIButton {
 
     @IBInspectable var hitValue : Int = 0
     @IBInspectable var fillColor : UIColor = UIColor.whiteColor()
-    @IBInspectable var teamID : TeamID = TeamID.TeamOne
     
-    var radius : CGFloat = 20.0
-    var spacing : CGFloat = 4.0
+    let radius : CGFloat = 20.0
+    let spacing : CGFloat = 4.0
+    let visable : Float = 1.0
+    let faded : Float = 0.15
     
     private var firstCircleLayer = CAShapeLayer()
     private var secondCircleLayer = CAShapeLayer()
@@ -23,26 +24,26 @@ class HitButton: UIButton {
     
     
     var currentState = ButtonState.NoHits {
-        didSet{
+        didSet {
             switch currentState {
             case .NoHits:
-                firstCircleLayer.opacity = 0.1
-                secondCircleLayer.opacity = 0.1
-                thirdCircleLayer.opacity = 0.1
+                firstCircleLayer.opacity = faded
+                secondCircleLayer.opacity = faded
+                thirdCircleLayer.opacity = faded
             case .OneHit:
-                firstCircleLayer.opacity = 1.0
-                secondCircleLayer.opacity = 0.1
-                thirdCircleLayer.opacity = 0.1
+                firstCircleLayer.opacity = visable
+                secondCircleLayer.opacity = faded
+                thirdCircleLayer.opacity = faded
                 break
             case .TwoHits:
-                secondCircleLayer.opacity = 1.0
-                secondCircleLayer.opacity = 1.0
-                thirdCircleLayer.opacity = 0.1
+                firstCircleLayer.opacity = visable
+                secondCircleLayer.opacity = visable
+                thirdCircleLayer.opacity = faded
                 break
             case .ThreeHits,.Closed:
-                thirdCircleLayer.opacity = 1.0
-                secondCircleLayer.opacity = 1.0
-                thirdCircleLayer.opacity = 1.0
+                firstCircleLayer.opacity = visable
+                secondCircleLayer.opacity = visable
+                thirdCircleLayer.opacity = visable
                 break
             }
         }
@@ -74,7 +75,7 @@ class HitButton: UIButton {
         let bezierPath = UIBezierPath(ovalInRect:circle.bounds)
         circle.path = bezierPath.CGPath
         circle.fillColor = fillColor.CGColor
-        circle.opacity = 0.1
+        circle.opacity = faded
         circle.shouldRasterize = true
         circle.rasterizationScale = UIScreen.mainScreen().scale
         return circle

@@ -8,20 +8,30 @@
 
 import UIKit
 
-class CricketScoreViewController: UIViewController{
+class CricketScoreViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var teamOneLabel: UILabel!
     @IBOutlet var teamOneHits: [HitButton]!
 
     @IBOutlet weak var teamTwoLabel: UILabel!
     @IBOutlet var teamTwoHits: [HitButton]!
-    @IBOutlet weak var undoButton: UIButton!
 
+    @IBOutlet weak var teamOneName: UITextField!
+    @IBOutlet weak var teamTwoName: UITextField!
     var gameMaster = GameMaster()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUI:", name: GlobalConsts.kUpdateUINotification, object: nil)
+        
+        teamOneName.delegate = self
+        let dismissTap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(dismissTap)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "updateUI:", name: GlobalConsts.kUpdateUINotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -55,6 +65,7 @@ class CricketScoreViewController: UIViewController{
         else {
             print("ERROR: One of the buttons is not in any collection(team)")
         }
+        view.endEditing(true)
     }
     
     // MARK: - UI updates
@@ -128,5 +139,13 @@ class CricketScoreViewController: UIViewController{
     private func hitCollectionForTeam(team: TeamID) -> [HitButton] {
         return team == TeamID.TeamOne ? teamOneHits : teamTwoHits
     }
+    
+    // MARK: - Text Field Delegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true;
+    }
+    
 }
 

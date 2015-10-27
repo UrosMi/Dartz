@@ -9,7 +9,7 @@
 import Foundation
 
 enum TeamID : UInt {
-    case TeamOne = 1337, TeamTwo = 8005
+    case TeamOne = 1, TeamTwo = 2
     func oppositeTeam() -> TeamID {
         return self == .TeamOne ? .TeamTwo : .TeamOne
     }

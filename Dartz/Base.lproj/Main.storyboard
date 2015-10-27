@@ -72,19 +72,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xX-H9-ocC">
-                                                <rect key="frame" x="0.0" y="177" width="60" height="86"/>
+                                                <rect key="frame" x="0.0" y="176" width="60" height="86"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                                 <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-tl-UDO">
-                                                <rect key="frame" x="0.0" y="265" width="60" height="86"/>
+                                                <rect key="frame" x="0.0" y="264" width="60" height="86"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                                 <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioG-Da-4xi">
-                                                <rect key="frame" x="0.0" y="353" width="60" height="86"/>
+                                                <rect key="frame" x="0.0" y="352" width="60" height="86"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                                 <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -158,26 +158,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQq-TM-IP3" userLabel="Team 1 Score">
                                         <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrE-zm-ryw" userLabel="Score Label">
-                                                <rect key="frame" x="72" y="5" width="26" height="51"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrE-zm-ryw" userLabel="Score Label" customClass="ScoreLabel" customModule="Dartz" customModuleProvider="target">
+                                                <rect key="frame" x="71" y="4" width="26" height="51"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="yConstraint" destination="P9K-IJ-yKF" id="zdm-kJ-Td0"/>
+                                                </connections>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="DrE-zm-ryw" firstAttribute="centerY" secondItem="IQq-TM-IP3" secondAttribute="centerY" id="P9K-IJ-yKF"/>
-                                            <constraint firstItem="DrE-zm-ryw" firstAttribute="centerX" secondItem="IQq-TM-IP3" secondAttribute="centerX" id="dWh-Hb-Rvx"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="dWh-Hb-Rvx"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W34-qT-oFr">
-                                        <rect key="frame" x="133" y="0.0" width="133" height="60"/>
+                                        <rect key="frame" x="132" y="0.0" width="133" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                         <state key="normal" title="✕">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,10 +184,10 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-KI-9dr" userLabel="Team 2 Score">
-                                        <rect key="frame" x="266" y="0.0" width="133" height="60"/>
+                                        <rect key="frame" x="265" y="0.0" width="133" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwG-bM-R3B">
-                                                <rect key="frame" x="35" y="5" width="26" height="51"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwG-bM-R3B" customClass="ScoreLabel" customModule="Dartz" customModuleProvider="target">
+                                                <rect key="frame" x="36" y="5" width="26" height="51"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                                 <color key="textColor" red="0.98431372549999996" green="0.82745098039999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -199,13 +196,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="OwG-bM-R3B" firstAttribute="centerY" secondItem="MzQ-KI-9dr" secondAttribute="centerY" id="Dvs-ht-hiD"/>
-                                            <constraint firstItem="OwG-bM-R3B" firstAttribute="centerX" secondItem="MzQ-KI-9dr" secondAttribute="centerX" id="PLR-Vq-kgK"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="PLR-Vq-kgK"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,9 +214,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="hitValue">
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                                <real key="value" value="22"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                 <color key="value" red="0.98431372549999996" green="0.82745098039999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -235,7 +223,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHs-sW-D7W" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="87" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="1" green="0.91825002820000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,7 +259,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxn-t7-j4s" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="263" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="262" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="1" green="0.91825002820000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,7 +277,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWa-od-ea5" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="351" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="350" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="1" green="0.91825002820000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
@@ -325,7 +313,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cq-Xr-0Mt" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="526" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="525" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="1" green="0.91825002820000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
@@ -366,7 +354,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1337" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-Pr-JrQ" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="87" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -402,7 +390,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1337" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-HG-f9Z" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="263" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="262" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -420,7 +408,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1337" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvO-zU-7ua" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="351" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="350" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -456,7 +444,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1337" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mB-It-oYH" customClass="HitButton" customModule="Dartz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="526" width="169" height="88"/>
+                                        <rect key="frame" x="0.0" y="525" width="169" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -478,41 +466,48 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-c2-BCi" userLabel="Team 2 Name">
                                 <rect key="frame" x="237" y="695" width="169" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cD-V3-EwG">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Team Two" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvZ-VZ-pbV">
+                                        <rect key="frame" x="0.0" y="5" width="169" height="32"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="0.82551319150000002" blue="0.092142157079999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.98431372549999996" green="0.82745098039999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="5cD-V3-EwG" firstAttribute="height" secondItem="p9e-c2-BCi" secondAttribute="height" id="2iQ-R5-Krm"/>
-                                    <constraint firstItem="5cD-V3-EwG" firstAttribute="width" secondItem="p9e-c2-BCi" secondAttribute="width" id="XNJ-d1-cOd"/>
-                                    <constraint firstItem="5cD-V3-EwG" firstAttribute="centerX" secondItem="p9e-c2-BCi" secondAttribute="centerX" id="ZFv-LG-567"/>
-                                    <constraint firstItem="5cD-V3-EwG" firstAttribute="centerY" secondItem="p9e-c2-BCi" secondAttribute="centerY" id="gzm-lf-gaZ"/>
+                                    <constraint firstItem="hvZ-VZ-pbV" firstAttribute="leading" secondItem="p9e-c2-BCi" secondAttribute="leading" id="3uh-J5-eR1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJo-Mn-jSc" userLabel="Team 1 Name">
                                 <rect key="frame" x="8" y="695" width="169" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rS-t6-R77">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Team One" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6c-up-rbq">
+                                        <rect key="frame" x="0.0" y="5" width="169" height="32"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="1rS-t6-R77" firstAttribute="centerY" secondItem="eJo-Mn-jSc" secondAttribute="centerY" id="QZT-E8-UGp"/>
-                                    <constraint firstItem="1rS-t6-R77" firstAttribute="width" secondItem="eJo-Mn-jSc" secondAttribute="width" id="RCo-HO-GNi"/>
-                                    <constraint firstItem="1rS-t6-R77" firstAttribute="height" secondItem="eJo-Mn-jSc" secondAttribute="height" id="d7Z-J0-RdC"/>
-                                    <constraint firstItem="1rS-t6-R77" firstAttribute="centerX" secondItem="eJo-Mn-jSc" secondAttribute="centerX" id="wVh-j5-nRK"/>
+                                    <constraint firstAttribute="trailing" secondItem="y6c-up-rbq" secondAttribute="trailing" id="5sH-mZ-Qa5"/>
+                                    <constraint firstItem="y6c-up-rbq" firstAttribute="leading" secondItem="eJo-Mn-jSc" secondAttribute="leading" id="D3n-ZL-Ow0"/>
+                                    <constraint firstItem="y6c-up-rbq" firstAttribute="top" secondItem="eJo-Mn-jSc" secondAttribute="top" id="TXI-oa-SLW"/>
+                                    <constraint firstItem="y6c-up-rbq" firstAttribute="height" secondItem="eJo-Mn-jSc" secondAttribute="height" constant="-8" id="f0i-Yq-sck"/>
+                                    <constraint firstItem="y6c-up-rbq" firstAttribute="top" secondItem="eJo-Mn-jSc" secondAttribute="top" constant="5" id="gpO-B5-EFM"/>
+                                    <constraint firstItem="y6c-up-rbq" firstAttribute="top" secondItem="eJo-Mn-jSc" secondAttribute="top" constant="20" symbolic="YES" id="iiU-ym-QHC"/>
+                                    <constraint firstAttribute="bottom" secondItem="y6c-up-rbq" secondAttribute="bottom" constant="20" symbolic="YES" id="sM3-IK-XHe"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TXI-oa-SLW"/>
+                                        <exclude reference="iiU-ym-QHC"/>
+                                        <exclude reference="sM3-IK-XHe"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
@@ -525,6 +520,7 @@
                             <constraint firstItem="9lQ-7q-gnN" firstAttribute="leading" secondItem="IQq-TM-IP3" secondAttribute="leading" id="CQb-sb-9hP"/>
                             <constraint firstItem="9lQ-7q-gnN" firstAttribute="width" secondItem="eJo-Mn-jSc" secondAttribute="width" id="DGK-kO-zCh"/>
                             <constraint firstItem="eJo-Mn-jSc" firstAttribute="top" secondItem="OVV-r9-KcN" secondAttribute="bottom" id="FWG-LX-R5S"/>
+                            <constraint firstItem="hvZ-VZ-pbV" firstAttribute="height" secondItem="y6c-up-rbq" secondAttribute="height" id="GCh-Ez-EkA"/>
                             <constraint firstItem="DrE-zm-ryw" firstAttribute="centerX" secondItem="GZs-dV-qnO" secondAttribute="centerX" id="Gf7-Be-9Kn"/>
                             <constraint firstItem="aJq-3S-zvD" firstAttribute="leading" secondItem="eJo-Mn-jSc" secondAttribute="trailing" id="HWm-qA-hEx"/>
                             <constraint firstAttribute="trailing" secondItem="OVV-r9-KcN" secondAttribute="trailing" constant="8" id="HeW-6j-2vw"/>
@@ -534,6 +530,8 @@
                             <constraint firstItem="sVU-YX-qgk" firstAttribute="top" secondItem="OVV-r9-KcN" secondAttribute="bottom" constant="40" id="NRH-r8-xrp"/>
                             <constraint firstItem="OVV-r9-KcN" firstAttribute="top" secondItem="A4w-yf-2CG" secondAttribute="bottom" id="PVg-T1-05c"/>
                             <constraint firstItem="OFV-rh-ZZu" firstAttribute="top" secondItem="pNo-oX-pOQ" secondAttribute="bottom" id="QI5-vW-HTW"/>
+                            <constraint firstItem="hvZ-VZ-pbV" firstAttribute="top" secondItem="y6c-up-rbq" secondAttribute="top" id="Rm7-hK-Tg0"/>
+                            <constraint firstItem="hvZ-VZ-pbV" firstAttribute="width" secondItem="y6c-up-rbq" secondAttribute="width" id="SRR-Zd-eEv"/>
                             <constraint firstItem="A4w-yf-2CG" firstAttribute="trailing" secondItem="MzQ-KI-9dr" secondAttribute="trailing" id="UTz-7f-dxe"/>
                             <constraint firstItem="A4w-yf-2CG" firstAttribute="width" secondItem="p9e-c2-BCi" secondAttribute="width" id="V0E-VZ-u29"/>
                             <constraint firstItem="sVU-YX-qgk" firstAttribute="top" secondItem="0bA-Q8-lbU" secondAttribute="bottom" id="VZo-ye-Be3"/>
@@ -574,7 +572,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="teamOneLabel" destination="DrE-zm-ryw" id="xcg-w2-d3r"/>
+                        <outlet property="teamOneName" destination="y6c-up-rbq" id="Kuc-3O-8wa"/>
                         <outlet property="teamTwoLabel" destination="OwG-bM-R3B" id="AHu-hu-aBZ"/>
+                        <outlet property="teamTwoName" destination="hvZ-VZ-pbV" id="eZb-06-PDf"/>
                         <outletCollection property="teamOneHits" destination="GZs-dV-qnO" collectionClass="NSMutableArray" id="uTY-Jr-O8Q"/>
                         <outletCollection property="teamOneHits" destination="dvO-zU-7ua" collectionClass="NSMutableArray" id="0Zi-yd-nOg"/>
                         <outletCollection property="teamOneHits" destination="0mB-It-oYH" collectionClass="NSMutableArray" id="c9c-Ee-Fev"/>

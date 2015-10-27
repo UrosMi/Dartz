@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4905DAAF1BD64C7A00F1A4D6 /* TeamIDsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAAE1BD64C7A00F1A4D6 /* TeamIDsEnum.swift */; settings = {ASSET_TAGS = (); }; };
-		4905DAB01BD64C7A00F1A4D6 /* TeamIDsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAAE1BD64C7A00F1A4D6 /* TeamIDsEnum.swift */; settings = {ASSET_TAGS = (); }; };
-		4905DAB41BD658C700F1A4D6 /* TurnTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */; settings = {ASSET_TAGS = (); }; };
-		4905DAB61BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */; settings = {ASSET_TAGS = (); }; };
-		4905DAB71BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		4905DAAF1BD64C7A00F1A4D6 /* TeamIDsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAAE1BD64C7A00F1A4D6 /* TeamIDsEnum.swift */; };
+		4905DAB01BD64C7A00F1A4D6 /* TeamIDsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAAE1BD64C7A00F1A4D6 /* TeamIDsEnum.swift */; };
+		4905DAB41BD658C700F1A4D6 /* TurnTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */; };
+		4905DAB61BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */; };
+		4905DAB71BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */; };
 		49435D7F1BD3B0A400AB0CC0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49435D7D1BD3B0A400AB0CC0 /* Interface.storyboard */; };
 		49435D811BD3B0A400AB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49435D801BD3B0A400AB0CC0 /* Assets.xcassets */; };
 		49435D881BD3B0A400AB0CC0 /* DartzWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -21,8 +21,10 @@
 		49435D931BD3B0A400AB0CC0 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D921BD3B0A400AB0CC0 /* ComplicationController.swift */; };
 		49435D951BD3B0A400AB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49435D941BD3B0A400AB0CC0 /* Assets.xcassets */; };
 		49435D991BD3B0A400AB0CC0 /* DartzWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 49435D7B1BD3B0A400AB0CC0 /* DartzWatch.app */; };
-		495E45B51BC1656600242B27 /* HitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B41BC1656600242B27 /* HitButton.swift */; settings = {ASSET_TAGS = (); }; };
-		495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */; settings = {ASSET_TAGS = (); }; };
+		495E45B51BC1656600242B27 /* HitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B41BC1656600242B27 /* HitButton.swift */; };
+		495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */; };
+		496DCDC91BDE99CF0008F9EA /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DCDC81BDE99CF0008F9EA /* KeyboardHandler.swift */; };
+		4992D5691BDF97E000C3F476 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D5681BDF97E000C3F476 /* ScoreLabel.swift */; };
 		49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5261BBAC71000C06AFF /* AppDelegate.swift */; };
 		49E4B5291BBAC71000C06AFF /* CricketScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5281BBAC71000C06AFF /* CricketScoreViewController.swift */; };
 		49E4B52C1BBAC71000C06AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E4B52A1BBAC71000C06AFF /* Main.storyboard */; };
@@ -30,8 +32,8 @@
 		49E4B5311BBAC71000C06AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E4B52F1BBAC71000C06AFF /* LaunchScreen.storyboard */; };
 		49E4B53C1BBAC71000C06AFF /* DartzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B53B1BBAC71000C06AFF /* DartzTests.swift */; };
 		49E4B5471BBAC71000C06AFF /* DartzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5461BBAC71000C06AFF /* DartzUITests.swift */; };
-		49FDFF041BD116A2003821B4 /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF031BD116A2003821B4 /* GameMaster.swift */; settings = {ASSET_TAGS = (); }; };
-		49FDFF061BD2EB5A003821B4 /* TurnTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */; settings = {ASSET_TAGS = (); }; };
+		49FDFF041BD116A2003821B4 /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF031BD116A2003821B4 /* GameMaster.swift */; };
+		49FDFF061BD2EB5A003821B4 /* TurnTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFF051BD2EB5A003821B4 /* TurnTypeEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		49435D961BD3B0A400AB0CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495E45B41BC1656600242B27 /* HitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitButton.swift; sourceTree = "<group>"; };
 		495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateEnum.swift; sourceTree = "<group>"; };
+		496DCDC81BDE99CF0008F9EA /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		4992D5681BDF97E000C3F476 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		49E4B5231BBAC71000C06AFF /* Dartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E4B5261BBAC71000C06AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E4B5281BBAC71000C06AFF /* CricketScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketScoreViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,15 @@
 			path = "DartzWatch Extension";
 			sourceTree = "<group>";
 		};
+		4992D5671BDF97A000C3F476 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				495E45B41BC1656600242B27 /* HitButton.swift */,
+				4992D5681BDF97E000C3F476 /* ScoreLabel.swift */,
+			);
+			name = "UI Components";
+			sourceTree = "<group>";
+		};
 		49E4B51A1BBAC71000C06AFF = {
 			isa = PBXGroup;
 			children = (
@@ -207,9 +220,10 @@
 			children = (
 				49E4B5261BBAC71000C06AFF /* AppDelegate.swift */,
 				49E4B5281BBAC71000C06AFF /* CricketScoreViewController.swift */,
-				495E45B41BC1656600242B27 /* HitButton.swift */,
+				496DCDC81BDE99CF0008F9EA /* KeyboardHandler.swift */,
 				49FDFF031BD116A2003821B4 /* GameMaster.swift */,
 				4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */,
+				4992D5671BDF97A000C3F476 /* UI Components */,
 				49FDFF081BD397B0003821B4 /* Storyboard */,
 				49FDFF071BD3978A003821B4 /* Enums */,
 				49E4B5321BBAC71000C06AFF /* Info.plist */,
@@ -467,7 +481,9 @@
 				49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */,
 				495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */,
 				495E45B51BC1656600242B27 /* HitButton.swift in Sources */,
+				496DCDC91BDE99CF0008F9EA /* KeyboardHandler.swift in Sources */,
 				49FDFF061BD2EB5A003821B4 /* TurnTypeEnum.swift in Sources */,
+				4992D5691BDF97E000C3F476 /* ScoreLabel.swift in Sources */,
 				4905DAB61BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */,
 				4905DAAF1BD64C7A00F1A4D6 /* TeamIDsEnum.swift in Sources */,
 			);

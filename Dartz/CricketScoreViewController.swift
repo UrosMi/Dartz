@@ -10,20 +10,21 @@ import UIKit
 
 class CricketScoreViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var teamOneLabel: UILabel!
+    @IBOutlet weak var teamOneLabel: ScoreLabel!
     @IBOutlet var teamOneHits: [HitButton]!
 
-    @IBOutlet weak var teamTwoLabel: UILabel!
+    @IBOutlet weak var teamTwoLabel: ScoreLabel!
     @IBOutlet var teamTwoHits: [HitButton]!
 
-    @IBOutlet weak var teamOneName: UITextField!
-    @IBOutlet weak var teamTwoName: UITextField!
+    @IBOutlet weak var teamOneName: TeamNameField!
+    @IBOutlet weak var teamTwoName: TeamNameField!
     var gameMaster = GameMaster()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         teamOneName.delegate = self
+        teamTwoName.delegate = self
         let dismissTap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(dismissTap)
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -43,10 +44,13 @@ class CricketScoreViewController: UIViewController, UITextFieldDelegate {
         gameMaster.undoTurn()
     }
     @IBAction func newGameTapped(sender: UIButton) {
-        for hit in teamOneHits {hit.currentState = ButtonState.NoHits}
-        for hit in teamTwoHits {hit.currentState = ButtonState.NoHits}
-        teamOneLabel.text = "\(0)"
-        teamTwoLabel.text = "\(0)"
+        for hit in teamOneHits { hit.resetToDefault() }
+        for hit in teamTwoHits { hit.resetToDefault() }
+        teamOneLabel.resetToDefault()
+        teamTwoLabel.resetToDefault()
+        teamOneName.resetToDefault()
+        teamTwoName.resetToDefault()
+        
         gameMaster.newGame()
     }
     
@@ -142,7 +146,16 @@ class CricketScoreViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Text Field Delegate
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        if let teamNameField = textField as? TeamNameField{
+            teamNameField.tryRevertingToDefaultTeamName()
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if let teamNameField = textField as? TeamNameField{
+            teamNameField.tryRevertingToDefaultTeamName()
+        }
         textField.endEditing(true)
         return true;
     }

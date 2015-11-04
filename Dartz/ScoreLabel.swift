@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ScoreLabel: UILabel {
+class ScoreLabel: UILabel, NewGameResetProtocol {
     
-    @IBOutlet var yConstraint: NSLayoutConstraint!
     override var text: String? {
         willSet(newText) {
             if text != newText {
-                animateScoreChange(withduration: 0.14, andJumpHeight: 10.0)
+                animateScoreChange(withduration: 0.12, andJumpHeight: 5.2)
             }
         }
     
@@ -33,12 +32,16 @@ class ScoreLabel: UILabel {
                         delay: 0.0,
                         options: .CurveEaseOut,
                         animations: { () -> Void in
-                        self.transform = CGAffineTransformMakeTranslation(0, jHeight)
+                        self.transform = CGAffineTransformMakeTranslation(0, 0)
                         },
                         completion: { (done) -> Void in
                             
                     })
                 }
             })
+    }
+    
+    func resetToDefault() {
+        text = "0"
     }
 }

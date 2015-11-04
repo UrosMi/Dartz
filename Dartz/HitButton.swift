@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HitButton: UIButton {
+class HitButton: UIButton, NewGameResetProtocol {
 
     @IBInspectable var hitValue : Int = 0
     @IBInspectable var fillColor : UIColor = UIColor.whiteColor()
@@ -80,5 +80,8 @@ class HitButton: UIButton {
         circle.rasterizationScale = UIScreen.mainScreen().scale
         return circle
     }
-
+    
+    func resetToDefault() {
+        currentState = .NoHits
+    }
 }

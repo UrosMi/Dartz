@@ -12,6 +12,8 @@ import UIKit
 extension CricketScoreViewController {
     
     func keyboardWillShow(notification: NSNotification) {
+        if self.view.bounds.origin.y != 0.0 { return }
+        
         let info  = notification.userInfo!
         let value: AnyObject = info[UIKeyboardFrameEndUserInfoKey]!
         
@@ -19,7 +21,7 @@ extension CricketScoreViewController {
         let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
         
         UIView.animateWithDuration(0.3) { () -> Void in
-            self.view.bounds.origin = CGPoint(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y + keyboardFrame.size.height)
+            self.view.bounds.origin.y += keyboardFrame.size.height
         }
     }
     
@@ -31,7 +33,7 @@ extension CricketScoreViewController {
         let keyboardFrame = view.convertRect(rawFrame, fromView: nil)
         
         UIView.animateWithDuration(0.3) { () -> Void in
-            self.view.bounds.origin = CGPoint(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y - keyboardFrame.size.height)
+            self.view.bounds.origin.y -= keyboardFrame.size.height
         }
     }
 

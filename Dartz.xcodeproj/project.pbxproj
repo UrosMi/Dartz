@@ -13,7 +13,6 @@
 		4905DAB61BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */; };
 		4905DAB71BD66E3D00F1A4D6 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */; };
 		49435D7F1BD3B0A400AB0CC0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49435D7D1BD3B0A400AB0CC0 /* Interface.storyboard */; };
-		49435D811BD3B0A400AB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49435D801BD3B0A400AB0CC0 /* Assets.xcassets */; };
 		49435D881BD3B0A400AB0CC0 /* DartzWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		49435D8D1BD3B0A400AB0CC0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D8C1BD3B0A400AB0CC0 /* InterfaceController.swift */; };
 		49435D8F1BD3B0A400AB0CC0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49435D8E1BD3B0A400AB0CC0 /* ExtensionDelegate.swift */; };
@@ -25,6 +24,8 @@
 		495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */; };
 		496DCDC91BDE99CF0008F9EA /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DCDC81BDE99CF0008F9EA /* KeyboardHandler.swift */; };
 		4992D5691BDF97E000C3F476 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D5681BDF97E000C3F476 /* ScoreLabel.swift */; };
+		4992D56B1BDFCC8500C3F476 /* TeamNameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D56A1BDFCC8500C3F476 /* TeamNameField.swift */; };
+		4992D56D1BDFD19800C3F476 /* NewGameResetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D56C1BDFD19800C3F476 /* NewGameResetProtocol.swift */; };
 		49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5261BBAC71000C06AFF /* AppDelegate.swift */; };
 		49E4B5291BBAC71000C06AFF /* CricketScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4B5281BBAC71000C06AFF /* CricketScoreViewController.swift */; };
 		49E4B52C1BBAC71000C06AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E4B52A1BBAC71000C06AFF /* Main.storyboard */; };
@@ -97,7 +98,6 @@
 		4905DAB51BD66E3D00F1A4D6 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		49435D7B1BD3B0A400AB0CC0 /* DartzWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DartzWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49435D7E1BD3B0A400AB0CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		49435D801BD3B0A400AB0CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49435D821BD3B0A400AB0CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49435D871BD3B0A400AB0CC0 /* DartzWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DartzWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49435D8C1BD3B0A400AB0CC0 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
@@ -110,6 +110,8 @@
 		495E45B61BC16C1800242B27 /* ButtonStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStateEnum.swift; sourceTree = "<group>"; };
 		496DCDC81BDE99CF0008F9EA /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		4992D5681BDF97E000C3F476 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
+		4992D56A1BDFCC8500C3F476 /* TeamNameField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNameField.swift; sourceTree = "<group>"; };
+		4992D56C1BDFD19800C3F476 /* NewGameResetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameResetProtocol.swift; sourceTree = "<group>"; };
 		49E4B5231BBAC71000C06AFF /* Dartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E4B5261BBAC71000C06AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E4B5281BBAC71000C06AFF /* CricketScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketScoreViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				49435D7D1BD3B0A400AB0CC0 /* Interface.storyboard */,
-				49435D801BD3B0A400AB0CC0 /* Assets.xcassets */,
 				49435D821BD3B0A400AB0CC0 /* Info.plist */,
 			);
 			path = DartzWatch;
@@ -187,6 +188,8 @@
 			children = (
 				495E45B41BC1656600242B27 /* HitButton.swift */,
 				4992D5681BDF97E000C3F476 /* ScoreLabel.swift */,
+				4992D56A1BDFCC8500C3F476 /* TeamNameField.swift */,
+				4992D56C1BDFD19800C3F476 /* NewGameResetProtocol.swift */,
 			);
 			name = "UI Components";
 			sourceTree = "<group>";
@@ -418,7 +421,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49435D811BD3B0A400AB0CC0 /* Assets.xcassets in Resources */,
 				49435D7F1BD3B0A400AB0CC0 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +480,9 @@
 			files = (
 				49FDFF041BD116A2003821B4 /* GameMaster.swift in Sources */,
 				49E4B5291BBAC71000C06AFF /* CricketScoreViewController.swift in Sources */,
+				4992D56D1BDFD19800C3F476 /* NewGameResetProtocol.swift in Sources */,
 				49E4B5271BBAC71000C06AFF /* AppDelegate.swift in Sources */,
+				4992D56B1BDFCC8500C3F476 /* TeamNameField.swift in Sources */,
 				495E45B71BC16C1800242B27 /* ButtonStateEnum.swift in Sources */,
 				495E45B51BC1656600242B27 /* HitButton.swift in Sources */,
 				496DCDC91BDE99CF0008F9EA /* KeyboardHandler.swift in Sources */,
